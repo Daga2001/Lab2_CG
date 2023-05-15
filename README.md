@@ -51,6 +51,7 @@ Se da clic sobre el botón que dice "Depurador local de Windows"
 ## Aclaraciones
 - en la rama main se muestran archivos de c++ que muestran los algoritmos de rasterización vistos en clase en 3D.
 - se deja en una rama distinta las librerias a utilizar para la implementación de la actividad 3 de este laboratorio.
+- no se realizan validaciones en las entradas que el usuario dé al programa, por lo tanto, debe estar atento de ingresar correctamente lo que se le solicita desde la interfaz de usuario.
 - la simulación hecha en c++, permite al usuario interactuar en un mundo semiabierto, es decir, puede moverse con el teclado y rotar la vista con el mouse.
 
 ## Requerimientos
