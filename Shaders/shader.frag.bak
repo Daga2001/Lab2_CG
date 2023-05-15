@@ -1,0 +1,12 @@
+#version 330
+
+in vec4 vCol;
+
+out vec4 colour;
+
+vec3 color = vec3(0.1f, 0.0f, 0.0f);
+
+void main()
+{
+	colour = vCol;
+}
