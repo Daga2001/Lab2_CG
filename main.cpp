@@ -34,6 +34,8 @@ double oyf = 0;
 double ozf = 0;
 double radius = 0;
 unsigned int nVectors = 0;
+int widthWin = 800;
+int heightWin = 600;
 
 const float toRadians = 3.14159265f / 180.0f;
 const float nearPlane = 0.1f;
@@ -406,12 +408,16 @@ int main()
 {
 	try {
 		// Handles the input UI.
+		std::cout << "Cual sera el ancho del espacio coordenado?:\n";
+		std::cin >> widthWin;
+		std::cout << "Cual sera el alto del espacio coordenado?:\n";
+		std::cin >> heightWin;
 		std::cout << "Cual algoritmo quieres probar (RECUERDE USAR MAYUSCULAS!)?\nBIA = Basic incremental algorithm.\nDDA = Digital Differential Analyzer.\nBA = Bresenham algorithm.\nMPC = Mid point circle algorithm.\nBCA = Bresenham circle algorithm:\n";
 		std::cin >> algorithm_name;
 		std::transform(algorithm_name.begin(), algorithm_name.end(), algorithm_name.begin(), ::toupper);
 		std::cout << "El algoritmo elegido es: " << algorithm_name << std::endl;
 
-		mainWindow = Window(800, 600);
+		mainWindow = Window(widthWin, heightWin);
 		mainWindow.Initialise();
 
 		CreateObjects();

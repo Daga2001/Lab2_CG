@@ -1,5 +1,15 @@
-﻿  main.cpp
-C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\main.cpp(429,20): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\main.cpp(430,15): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+﻿  MathOGL.cpp
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(189,8): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(195,18): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(220,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(220,21): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(262,7): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(263,7): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(268,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(269,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(275,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(281,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(304,8): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(322,8): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\MathOGL.cpp(368,8): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
   Lab2_CG.vcxproj -> C:\Users\David\Documents\Visual Studio 2019\Projects\Lab2_CG\Debug\Lab2_CG.exe

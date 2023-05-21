@@ -185,17 +185,15 @@ std::vector<glm::vec3> MathOGL::drawLineBasic(double x1, double y1, double x2, d
 	double dx = abs(x2 - x1);
 	double dy = abs(y2 - y1);
 	double m = dy / dx;
-	if (m >= 0 && m <= 1) {
-		double xi, yi;
-		int i = x1;
-		yi = y1;
-		points.push_back(glm::vec3(i, yi, 0));
-		while (i <= x2) {
-			xi = i;
-			yi = roundf(yi + m);
-			points.push_back(glm::vec3(xi, yi, 0));
-			i = i + 1;
-		}
+	double xi, yi;
+	int i = x1;
+	yi = y1;
+	points.push_back(glm::vec3(i, yi, 0));
+	while (i < x2) {
+		i = i + 1;
+		xi = i;
+		yi = roundf(yi + m);
+		points.push_back(glm::vec3(xi, yi, 0));
 	}
 	return points;
 }
@@ -215,21 +213,27 @@ std::vector<glm::vec3> MathOGL::drawLineBasic(double x1, double y1, double x2, d
 std::vector<glm::vec3> MathOGL::drawLineBres(double x1, double y1, double x2, double y2)
 {
 	std::vector<glm::vec3> points;
-	double m_new = 2 * (y2 - y1);
-	double slope_error_new = m_new - (x2 - x1);
+	double dx = abs(x2 - x1);
+	double dy = abs(y2 - y1);
+	double pk = 2 * dy - dx;
+
 	for (int x = x1, y = y1; x <= x2; x++) {
+
 		points.push_back(glm::vec3(x, y, 0));
 
-		// Add slope to increment angle formed
-		slope_error_new += m_new;
+		dx = abs(x2 - x);
+		dy = abs(y2 - y);
 
-		// Slope error reached limit, time to
-		// increment y and update slope error.
-		if (slope_error_new >= 0)
+		if (pk >= 0)
 		{
+			pk = pk + 2 * dy - 2 * dx;
 			y++;
-			slope_error_new -= 2 * (x2 - x1);
 		}
+		else
+		{
+			pk = pk + 2 * dy;
+		}
+
 	}
 	return points;
 }
@@ -249,29 +253,37 @@ std::vector<glm::vec3> MathOGL::drawLineBres(double x1, double y1, double x2, do
 std::vector<glm::vec3> MathOGL::drawLineDDA(double x1, double y1, double x2, double y2)
 {
 	std::vector<glm::vec3> points;
-	float dx = abs(x2 - x1);
-	float dy = abs(y2 - y1);
-	float step;
-
-	if (dx >= dy)
-		step = dx;
-	else
-		step = dy;
-
-	dx = dx / step;
-	dy = dy / step;
-
+	float dy = 0;
+	float dx = 0;
 	int xi, yi;
+	float step = 0;
+	int i = 1;
 
 	xi = x1;
 	yi = y1;
 	points.push_back(glm::vec3(xi, yi, 0));
-	int i = 1;
-	while (i <= step) {
-		xi = xi + dx;
-		yi = yi + dy;
-		i = i + 1;
+
+	while (xi < x2 || yi < x2) {
+
+		dy = abs(y2 - yi);
+		dx = abs(x2 - xi);
+
+		if (dx > dy)
+		{
+			step = dx;
+			dx = dx / step;
+			xi = xi + dx;
+		}
+		else
+		{
+			step = dy;
+			dy = dy / step;
+			yi = yi + dy;
+		}
+			
 		points.push_back(glm::vec3(xi, yi, 0));
+
+		i = i + 1;
 	}
 	return points;
 }
