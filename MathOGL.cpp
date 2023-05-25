@@ -213,16 +213,16 @@ std::vector<glm::vec3> MathOGL::drawLineBasic(double x1, double y1, double x2, d
 std::vector<glm::vec3> MathOGL::drawLineBres(double x1, double y1, double x2, double y2)
 {
 	std::vector<glm::vec3> points;
-	double dx = abs(x2 - x1);
-	double dy = abs(y2 - y1);
+	double dx = x2 - x1;
+	double dy = y2 - y1;
 	double pk = 2 * dy - dx;
 
 	for (int x = x1, y = y1; x <= x2; x++) {
 
 		points.push_back(glm::vec3(x, y, 0));
 
-		dx = abs(x2 - x);
-		dy = abs(y2 - y);
+		dx = x2 - x;
+		dy = y2 - y;
 
 		if (pk >= 0)
 		{
