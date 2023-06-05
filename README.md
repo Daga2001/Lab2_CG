@@ -55,9 +55,11 @@ Se da clic sobre el botón que dice "Depurador local de Windows"
 - la simulación hecha en c++, permite al usuario interactuar en un mundo semiabierto, es decir, puede moverse con el teclado y rotar la vista con el mouse.
 
 ## Requerimientos
-- se requiere de las siguientes librerias:
+- se requiere de las siguientes librerias o cabeceras (.h):
   - opengl32.lib
   - GLEW
   - GLFW 
+  - GLM
   - STB
+
   Se recomienda instalarlas para una arquitectura de 32 bits.
